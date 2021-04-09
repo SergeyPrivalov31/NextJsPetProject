@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { MainLayout } from '../components/MainLayout';
 import Link from 'next/link';
 
-export default function Post({ posts }) {
+export default function Posts({ posts }) {
 
 	// const [posts, setPosts] = useState([]);
 	// useEffect(() => {
@@ -30,7 +30,7 @@ export default function Post({ posts }) {
 	)
 }
 
-Post.getInitialProps = async () => {
+Posts.getInitialProps = async () => {
 	const response = await fetch('http://localhost:4200/posts')
 	const posts = await response.json()
 
