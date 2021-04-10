@@ -33,6 +33,7 @@ export default function Post({ post: serverPost }) {
 		</MainLayout>
 	)
 }
+//#ЭТО используем если нужно чтобы отработало и на фронте и на бэке
 
 Post.getInitialProps = async ({ query, req }) => {
 	if (!req) {
@@ -45,3 +46,16 @@ Post.getInitialProps = async ({ query, req }) => {
 		post
 	}
 }
+
+
+//#ЭТО используем если нужен только Бэк
+
+// export async function getServerSideProps({ query, req }) {
+// 	// if (!req) {
+// 	// 	return { post: null }
+// 	// }
+// 	const response = await fetch(`http://localhost:4200/posts/${query.id}`)
+// 	const post = await response.json()
+
+// 	return { props: { post } }
+// }
